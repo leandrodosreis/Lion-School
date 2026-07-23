@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    background-color:  #3347B0;
+    width: auto;
+    color: white;
+    justify-content: space-between;
+    padding: 20px 5%;
+    font-size: 30px;
+    align-items: center;
+}
+
+.divheader{
+    display: flex;
+    align-items: center;
+}
+
+footer{
+    display: flex;
+    background-color:  #3347B0;
+    width: auto;
+    height: auto;
+    justify-content: space-between;
+    padding: 20px 5%;
+    align-items: center;
+    color: white;
+}
+
+.infofooter{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contato{
+    display: flex;
+    align-items: center;
+}
+
+.contato span{
+    padding-left: 6px;
+
+}
+
+.maps{
+    width: 25px;
+}
