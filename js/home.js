@@ -6,10 +6,27 @@ export async function criarHome(){
     texto.className = 'textoInicial'
     texto.textContent = 'Escolha um curso para gerenciar'
 
-    const image = document.createElement('img')
-    image.className = 'aparelhos'
-    image.src = "../img/devices.png"
-    document.main.appendChild(image)
+    const main = document.getElementById('main')
 
-    return texto
+
+    const imageEletronic = document.createElement('img')
+    imageEletronic.className = 'aparelhos'
+    imageEletronic.src = "../img/devices.png"
+
+
+    const imageWoman = document.createElement('img')
+    imageWoman.className = 'woman'
+    imageWoman.src = "../img/studant (1).png"
+    
+    const btnDS = document.createElement('button')
+    btnDS.className = 'btnDS'
+    btnDS.onclick = () => renderizarPagina('desenvolvimento')
+
+    const btnRedes = document.createElement('button')
+    btnRedes.className = 'btnRedes'
+    btnRedes.onclick = () => renderizarPagina('desenvolvimento')
+
+    main.append(texto, imageEletronic,imageWoman, btnDS, btnRedes)
+
+    return main
 }

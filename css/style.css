@@ -54,3 +54,20 @@ footer{
 .textoInicial{
     font-size: 3rem;
 }
+
+.btnDS{
+    display: flex;
+    border: none;
+    cursor: pointer;
+    padding: 5rem 10rem;
+    background-color: #3347B0;
+}
+
+.btnRedes{
+    display: flex;
+    border: none;
+    cursor: pointer;
+    font-size: 0.88rem;
+    padding: 5rem 10rem;
+    background-color: #3347B0;
+}
