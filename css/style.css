@@ -1,73 +1,238 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header{
+body {
+    min-height: 100vh;
     display: flex;
-    background-color:  #3347B0;
-    width: auto;
+    flex-direction: column;
+    background-color: #FFFFFF;
+}
+
+/*2. HEADER & FOOTER (Estandardizados)*/
+
+header {
+    display: flex;
+    background-color: #3347B0;
     color: white;
     justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    height: 80px;
+}
+
+header img {
+    height: 50px;
+}
+
+.divheader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.divheader span {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+footer {
+    display: flex;
+    background-color: #3347B0;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px 5%;
-    font-size: 30px;
-    align-items: center;
+    margin-top: auto; /* Garante que o footer fique sempre no rodapé */
 }
 
-.divheader{
+.infofooter {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.9rem;
 }
 
-footer{
+.contato {
     display: flex;
-    background-color:  #3347B0;
-    width: auto;
+    align-items: center;
+    gap: 8px;
+}
+
+.contato img {
+    width: 18px;
+}
+
+/*
+   3. ÁREA PRINCIPAL (MAIN)
+    */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 5%;
+}
+
+/* 
+   4. TELA HOME
+    */
+.container-home {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.textoInicial {
+    font-size: 2.8rem;
+    color: #333;
+    font-weight: 300;
+}
+
+.textoInicial strong {
+    color: #3347B0;
+    font-weight: bold;
+}
+
+/* Layout dividido: Ilustrações à esquerda, Botões à direita */
+.conteudo-home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.ilustracoes {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.aparelhos {
+    max-width: 250px;
     height: auto;
-    justify-content: space-between;
-    padding: 20px 5%;
-    align-items: center;
-    color: white;
 }
 
-.infofooter{
+.woman {
+    max-width: 180px;
+    height: auto;
+}
+
+/* Botões do Curso */
+.container-cursos {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.contato{
+.btnDS, .btnRedes {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 300px;
+    height: 120px;
+    background-color: #3347B0;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(51, 71, 176, 0.3);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btnDS:hover, .btnRedes:hover {
+    transform: translateY(-4px);
+    background-color: #27378f;
+}
+
+/* 5. TELA DE CURSO / ALUNOS (Grid & Cards)*/
+.container-desenvolvimento {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+}
+
+.topo-curso {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.contato span{
-    padding-left: 6px;
-
+.titulo-curso {
+    font-size: 2.5rem;
+    color: #3347B0;
+    text-transform: capitalize;
 }
 
-.maps{
-    width: 25px;
-}
-
-.textoInicial{
-    font-size: 3rem;
-}
-
-.btnDS{
-    display: flex;
-    border: none;
+/* Select para filtrar por status */
+.select-status {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid #3347B0;
+    border-radius: 8px;
+    color: #3347B0;
+    font-weight: bold;
+    outline: none;
     cursor: pointer;
-    padding: 5rem 10rem;
-    background-color: #3347B0;
 }
 
-.btnRedes{
+/* Grade Responsiva para Alunos */
+.grid-alunos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+    margin-top: 10px;
+}
+
+/* Estilo do Card Individual */
+.card-aluno {
     display: flex;
-    border: none;
-    cursor: pointer;
-    font-size: 0.88rem;
-    padding: 5rem 10rem;
-    background-color: #3347B0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15px;
+    height: 240px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+}
+
+.card-aluno:hover {
+    transform: scale(1.03);
+}
+
+.card-aluno img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+}
+
+.card-aluno p {
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+/* Varições de Cor conforme o Status do Aluno */
+.card-aluno.cursando {
+    background-color: #3347B0; /* Azul */
+}
+
+.card-aluno.finalizado {
+    background-color: #E3B053; /* Amarelo / Dourado */
 }

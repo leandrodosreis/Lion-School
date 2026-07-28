@@ -1,18 +1,14 @@
 'use strict'
 
-import { criarDesenvolvimento } from "./js/desenvolvimento.js"
-import { criarHome } from "./js/home.js"
+import { criarDesenvolvimento } from "./pages/desenvolvimento.js"
+import { criarHome } from "./pages/home.js"
 
 const paginas = {
     home: {
-        titulo: '',
-        renderizar: criarHome,
-        mostrarHeader: false
+        renderizar: criarHome
     }, 
     desenvolvimento: {
-        titulo: '',
-        renderizar: criarDesenvolvimento,
-        mostrarHeader: false
+        renderizar: criarDesenvolvimento
     }
 }
 
