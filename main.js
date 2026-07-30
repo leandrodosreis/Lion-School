@@ -1,23 +1,19 @@
 'use strict'
 
-import { criarDesenvolvimento } from "./pages/desenvolvimento.js"
-import { criarHome } from "./pages/home.js"
+import { renderizarPagina, voltarPagina } from "./router.js"
 
-const paginas = {
-    home: {
-        renderizar: criarHome
-    }, 
-    desenvolvimento: {
-        renderizar: criarDesenvolvimento
+// Clique no header: se estiver em qualquer página que não seja a Home, volta;
+// se estiver na Home, é a ação de "Sair" (ajuste aqui a lógica de logout, se houver)
+document.querySelector('.divheader').addEventListener('click', () => {
+    const textoAtual = document.querySelector('.divheader span').textContent
+
+    if (textoAtual === 'Voltar') {
+        voltarPagina()
+    } else {
+        // Ação de logout / redirecionamento para tela de login, se existir
+        console.log('Sair do sistema')
     }
-}
-
-export async function renderizarPagina(nomePagina, dados = null) {
-    const paginaConfig = paginas[nomePagina] 
-
-    const conteudo = await paginaConfig.renderizar(dados)
-    document.getElementById('main').replaceChildren(conteudo)
-}
+})
 
 // Página inicial
 renderizarPagina('home')

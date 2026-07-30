@@ -12,7 +12,7 @@ body {
     background-color: #FFFFFF;
 }
 
-/*2. HEADER & FOOTER (Estandardizados)*/
+/*2. HEADER & FOOTER*/
 
 header {
     display: flex;
@@ -47,7 +47,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    margin-top: auto; /* Garante que o footer fique sempre no rodapé */
+    margin-top: auto;
 }
 
 .infofooter {
@@ -67,9 +67,23 @@ footer {
     width: 18px;
 }
 
-/*
-   3. ÁREA PRINCIPAL (MAIN)
-    */
+.social{
+    display: flex;
+    gap: 10px;
+}
+
+.social div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    padding: 10px;
+    width: 48px;
+    height: 48px;
+}
+
+/*3. ÁREA PRINCIPAL (MAIN) */
 main {
     flex: 1;
     display: flex;
@@ -77,9 +91,7 @@ main {
     padding: 40px 5%;
 }
 
-/* 
-   4. TELA HOME
-    */
+/* 4. TELA HOME*/
 .container-home {
     display: flex;
     flex-direction: column;
@@ -98,7 +110,6 @@ main {
     font-weight: bold;
 }
 
-/* Layout dividido: Ilustrações à esquerda, Botões à direita */
 .conteudo-home {
     display: flex;
     justify-content: space-between;
@@ -140,20 +151,19 @@ main {
     background-color: #3347B0;
     color: white;
     border: none;
-    border-radius: 12px;
     font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 8px 15px rgba(51, 71, 176, 0.3);
-    transition: transform 0.2s, background-color 0.2s;
 }
 
-.btnDS:hover, .btnRedes:hover {
-    transform: translateY(-4px);
-    background-color: #27378f;
+.btnDS img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1);
 }
 
-/* 5. TELA DE CURSO / ALUNOS (Grid & Cards)*/
+/* 5. TELA DE CURSO / ALUNOS*/
 .container-desenvolvimento {
     display: flex;
     flex-direction: column;
@@ -173,16 +183,56 @@ main {
     text-transform: capitalize;
 }
 
+/* Barra superior da página do curso: filtro de status + legenda */
+.barra-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EFF1FA;
+    padding: 12px 20px;
+    flex-wrap: wrap;
+}
+
 /* Select para filtrar por status */
 .select-status {
     padding: 10px 15px;
     font-size: 1rem;
-    border: 2px solid #3347B0;
-    border-radius: 8px;
+    background-color: #FFFFFF;
     color: #3347B0;
     font-weight: bold;
     outline: none;
     cursor: pointer;
+}
+
+.legenda {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 0.85rem;
+    color: #3347B0;
+    font-weight: bold;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+}
+
+.bolinha {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.bolinha.cursando {
+    background-color: #3347B0;
+}
+
+.bolinha.finalizado {
+    background-color: #E3B053;
 }
 
 /* Grade Responsiva para Alunos */
@@ -201,15 +251,12 @@ main {
     justify-content: space-between;
     padding: 20px 15px;
     height: 240px;
-    border-radius: 12px;
+    border: none;
     color: white;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s;
-}
-
-.card-aluno:hover {
-    transform: scale(1.03);
+    cursor: pointer;
+    font-family: inherit;
 }
 
 .card-aluno img {
@@ -217,7 +264,6 @@ main {
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid rgba(255, 255, 255, 0.6);
 }
 
 .card-aluno p {
@@ -235,4 +281,35 @@ main {
 
 .card-aluno.finalizado {
     background-color: #E3B053; /* Amarelo / Dourado */
+}
+
+/*6. TELA DE DETALHE DO ALUNO*/
+.container-aluno {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.card-foto-aluno {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card-foto-aluno img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nome-aluno {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #3347B0;
+    text-transform: uppercase;
+    text-align: center;
 }
